@@ -11,46 +11,46 @@ def handle_callback(update, context):
 
     # Tombol utama
     if data == "vps":
-        context.bot.edit_message_text(
+        context.bot.send_message(
             chat_id=chat_id,
-            message_id=message_id,
             text="\n".join(DataProduk.pricelist_vps),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
             ])
         )
+        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "userbot":
-        context.bot.edit_message_text(
+        context.bot.send_message(
             chat_id=chat_id,
-            message_id=message_id,
             text="\n".join(DataProduk.pricelist_userbot),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
             ])
         )
+        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "bot_fsub":
-        context.bot.edit_message_text(
+        context.bot.send_message(
             chat_id=chat_id,
-            message_id=message_id,
             text="\n".join(DataProduk.pricelist_bot_fsub),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
             ])
         )
+        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "main_menu":
-        show_main_menu(chat_id, message_id, context)
+        show_main_menu(chat_id, context)
+        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "close":
         context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
 
-def show_main_menu(chat_id, message_id, context):
-    context.bot.edit_message_text(
+def show_main_menu(chat_id, context):
+    context.bot.send_message(
         chat_id=chat_id,
-        message_id=message_id,
         text="Pilih pricelist yang diinginkan:",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("VPS", callback_data="vps")],
