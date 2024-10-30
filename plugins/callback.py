@@ -1,7 +1,7 @@
 # plugins/callback.py
 
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
-from plugins.data import DataProduk
+from plugins.data import DataProduk, Pay
 
 def handle_callback(update, context):
     query = update.callback_query
@@ -42,6 +42,17 @@ def handle_callback(update, context):
             ])
         )
 
+    elif data == "payment":
+        context.bot.edit_message_caption(
+            chat_id=chat_id,
+            message_id=message_id,
+            caption=Pay.payment_info,
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
+            ])
+        )
+
     elif data == "main_menu":
         show_main_menu(chat_id, message_id, context)
 
@@ -57,6 +68,7 @@ def show_main_menu(chat_id, message_id, context):
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("VPS", callback_data="vps"), InlineKeyboardButton("Userbot", callback_data="userbot")],
-            [InlineKeyboardButton("Bot Fsub", callback_data="bot_fsub")]
+            [InlineKeyboardButton("Bot Fsub", callback_data="bot_fsub")],
+            [InlineKeyboardButton("Pembayaran", callback_data="payment")]  # Tombol Pembayaran di main menu
         ])
     )
