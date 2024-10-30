@@ -42,8 +42,11 @@ def start(update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    caption_text = "*Welcome to NyxianNetwork!*" \
-                   "\nSilakan pilih layanan yang ingin Anda lihat harganya."
+    # Pelolosan karakter khusus pada caption
+    caption_text = (
+        "*Welcome to NyxianNetwork\\!*"  # Karakter '!' diloloskan dengan '\\'
+        "\nSilakan pilih layanan yang ingin Anda lihat harganya."
+    )
 
     # Mengirimkan pesan baru dengan gambar, caption, dan tombol setelah animasi dihapus
     context.bot.send_photo(
