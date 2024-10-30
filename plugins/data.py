@@ -46,3 +46,9 @@ class DataProduk:
         "- Apabila bot Anda ter-banned, Anda bisa membuat bot lagi secara gratis sesuai dengan sisa masa aktif bot Anda.\n",
         f"Order? Chat [Katsu](https://t.me/{OWNER_USERNAME})"
     ]
+
+class Pay:
+    """Class to hold payment information."""
+    payment_info = (
+        "Untuk pembayaran/donasi, silakan kirim ke DANA 081398871823."
+    )
