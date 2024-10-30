@@ -1,10 +1,10 @@
 # plugins/start.py
 
 import time  # Import time for delay
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from telegram import ParseMode  # Import ParseMode dari telegram
-from config import LOGO_URL, OWNER_USERNAME
+from config import *
 from plugins.data import DataProduk
 
 def start(update, context: CallbackContext):
@@ -12,12 +12,21 @@ def start(update, context: CallbackContext):
 
     # Tampilkan animasi "typing..." sebelum menampilkan konten
     context.bot.send_chat_action(chat_id=chat_id, action="typing")
-    
-    # Kirim pesan animasi "Starting bot..." secara bertahap
-    typing_text = "Starting bot..."
-    for i in range(len(typing_text) + 1):
-        context.bot.send_message(chat_id=chat_id, text=typing_text[:i])
+
+    # Pesan yang akan ditampilkan
+    full_message = "Starting Bot..."
+    typing_text = ""
+
+    # Kirim pesan secara bertahap
+    for char in full_message:
+        typing_text += char
+        context.bot.send_message(chat_id=chat_id, text=typing_text)
         time.sleep(0.1)  # jeda antar karakter untuk efek mengetik
+
+    # Mengirim titik tambahan untuk efek
+    for i in range(4):  # Untuk menambahkan 3 titik
+        context.bot.send_message(chat_id=chat_id, text=typing_text + '.' * (i % 3 + 1))
+        time.sleep(0.5)  # jeda sebelum mengirim titik berikutnya
 
     # Menampilkan logo, caption, dan tombol setelah animasi selesai
     keyboard = [
