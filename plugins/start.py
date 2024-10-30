@@ -15,6 +15,7 @@ def start(update: Update, context: CallbackContext):
         caption="Selamat datang di Bot Pricelist! Pilih salah satu opsi di bawah untuk melihat daftar harga:",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("VPS", callback_data="vps"), InlineKeyboardButton("Userbot", callback_data="userbot")],
-            [InlineKeyboardButton("Bot Fsub", callback_data="bot_fsub")]
+            [InlineKeyboardButton("Bot Fsub", callback_data="bot_fsub")],
+            [InlineKeyboardButton("Pembayaran", callback_data="payment")]  # Tombol Pembayaran ditambahkan di sini
         ])
     )
