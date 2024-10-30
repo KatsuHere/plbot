@@ -42,9 +42,9 @@ def start(update, context: CallbackContext):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    # Pelolosan karakter khusus pada caption
+    # Pelolosan karakter khusus pada caption untuk MarkdownV2
     caption_text = (
-        "*Welcome to NyxianNetwork\\!*"  # Karakter '!' diloloskan dengan '\\'
+        "*Welcome to NyxianNetwork\\!*"  # Karakter '!' diloloskan
         "\nSilakan pilih layanan yang ingin Anda lihat harganya."
     )
 
