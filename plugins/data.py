@@ -48,7 +48,8 @@ class DataProduk:
     ]
 
 class Pay:
-    """Class to hold payment information."""
     payment_info = (
-        "Untuk pembayaran/donasi, silakan kirim ke DANA 081398871823."
+        "❏ Pembayaran\n"
+        "└• Dana: 081398871823\n\n"
+        "Setelah pembayaran selesai, kirimkan bukti pembayaran ke [Katsu](https://t.me/{OWNER_USERNAME})."
     )
