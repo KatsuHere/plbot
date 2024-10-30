@@ -47,9 +47,10 @@ class DataProduk:
         f"Order? Chat [Katsu](https://t.me/{OWNER_USERNAME})"
     ]
 
-    # Menambahkan informasi pembayaran di sini
+# Kelas baru untuk informasi pembayaran
+class Pay:
     pembayaran_info = (
         "❏ Pembayaran\n"
         "└• Dana: 081398871823\n\n"
-        "Setelah pembayaran selesai, kirimkan bukti pembayaran ke [Katsu](https://t.me/{OWNER_USERNAME})"
+        f"Setelah pembayaran selesai, kirimkan bukti pembayaran ke [Katsu](https://t.me/{OWNER_USERNAME})"
     )
