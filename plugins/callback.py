@@ -42,20 +42,33 @@ def handle_callback(update, context):
             ])
         )
 
+    elif data == "payment":
+        context.bot.edit_message_caption(
+            chat_id=chat_id,
+            message_id=message_id,
+            caption=Pay.payment_info,
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
+            ])
+        )
+
     elif data == "main_menu":
         show_main_menu(chat_id, message_id, context)
 
     elif data == "close":
         context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
-    # Tambahkan bagian ini untuk menangani tombol "Pembayaran"
-    elif data == "pembayaran":
-        context.bot.edit_message_caption(
-            chat_id=chat_id,
-            message_id=message_id,
-            caption=Pay.pembayaran_info,
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
-            ])
-        )
+
+def show_main_menu(chat_id, message_id, context):
+    context.bot.edit_message_caption(
+        chat_id=chat_id,
+        message_id=message_id,
+        caption="Pilih pricelist yang diinginkan:",
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("VPS", callback_data="vps"), InlineKeyboardButton("Userbot", callback_data="userbot")],
+            [InlineKeyboardButton("Bot Fsub", callback_data="bot_fsub")],
+            [InlineKeyboardButton("Pembayaran", callback_data="payment")]  # Tombol Pembayaran di main menu
+        ])
+    )
