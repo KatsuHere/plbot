@@ -3,7 +3,7 @@
 import logging
 import subprocess
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
-from plugins.start import start
+from plugins.start import start, id_command
 from plugins.callback import handle_callback
 from config import BOT_TOKEN
 
@@ -35,6 +35,7 @@ def main():
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("id", id_command))
     dp.add_handler(CommandHandler("update", update_repo))  # Add the update command handler
     dp.add_handler(CallbackQueryHandler(handle_callback))
 
