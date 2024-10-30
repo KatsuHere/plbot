@@ -10,7 +10,7 @@ class DataProduk:
         "- VPS 2GB RAM, 1 Core — Rp20.000/bulan",
         "- VPS 2GB RAM, 2 Core — Rp32.000/bulan",
         "- VPS 4GB RAM, 2 Core — Rp45.000/bulan",
-        "- VPS 8GB RAM, 4 Core — Rp50.000/bulan",
+        "- VPS 8GB RAM, 2 Core — Rp50.000/bulan",
         "- VPS 8GB RAM, 4 Core — Rp55.000/bulan",
         "- VPS 16GB RAM, 4 Core — Rp70.000/bulan\n",
         "*Benefit:*",
@@ -47,10 +47,8 @@ class DataProduk:
         f"Order? Chat [Katsu](https://t.me/{OWNER_USERNAME})"
     ]
 
-# Kelas baru untuk informasi pembayaran
 class Pay:
-    pembayaran_info = (
-        "❏ Pembayaran\n"
-        "└• Dana: 081398871823\n\n"
-        f"Setelah pembayaran selesai, kirimkan bukti pembayaran ke [Katsu](https://t.me/{OWNER_USERNAME})"
+    """Class to hold payment information."""
+    payment_info = (
+        "Untuk pembayaran/donasi, silakan kirim ke DANA 081398871823."
     )
