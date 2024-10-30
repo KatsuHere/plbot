@@ -11,47 +11,47 @@ def handle_callback(update, context):
 
     # Tombol utama
     if data == "vps":
-        context.bot.send_message(
+        context.bot.edit_message_caption(
             chat_id=chat_id,
-            text="\n".join(DataProduk.pricelist_vps),
+            message_id=message_id,
+            caption="Daftar Harga VPS:\n" + "\n".join(DataProduk.pricelist_vps),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
             ])
         )
-        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "userbot":
-        context.bot.send_message(
+        context.bot.edit_message_caption(
             chat_id=chat_id,
-            text="\n".join(DataProduk.pricelist_userbot),
+            message_id=message_id,
+            caption="Daftar Harga Userbot:\n" + "\n".join(DataProduk.pricelist_userbot),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
             ])
         )
-        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "bot_fsub":
-        context.bot.send_message(
+        context.bot.edit_message_caption(
             chat_id=chat_id,
-            text="\n".join(DataProduk.pricelist_bot_fsub),
+            message_id=message_id,
+            caption="Daftar Harga Bot Fsub:\n" + "\n".join(DataProduk.pricelist_bot_fsub),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("‹", callback_data="main_menu"), InlineKeyboardButton("×", callback_data="close")]
             ])
         )
-        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
     elif data == "main_menu":
-        show_main_menu(chat_id, context)
-        context.bot.delete_message(chat_id=chat_id, message_id=message_id)
+        show_main_menu(chat_id, message_id, context)
 
     elif data == "close":
         context.bot.delete_message(chat_id=chat_id, message_id=message_id)
 
 
-def show_main_menu(chat_id, context):
-    context.bot.send_message(
+def show_main_menu(chat_id, message_id, context):
+    context.bot.edit_message_caption(
         chat_id=chat_id,
-        text="Pilih pricelist yang diinginkan:",
+        message_id=message_id,
+        caption="Pilih pricelist yang diinginkan:",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("VPS", callback_data="vps")],
             [InlineKeyboardButton("Userbot", callback_data="userbot")],
