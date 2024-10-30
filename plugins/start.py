@@ -4,7 +4,7 @@ import time  # Import time for delay
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from telegram.ext import CallbackContext
 from telegram import ParseMode  # Import ParseMode dari telegram
-from config import BOT_LOGO_URL, OWNER_USERNAME
+from config import LOGO_URL, OWNER_USERNAME
 from plugins.data import DataProduk
 
 def start(update, context: CallbackContext):
@@ -38,7 +38,7 @@ def start(update, context: CallbackContext):
     # Mengirimkan pesan gambar, caption, dan tombol
     context.bot.send_photo(
         chat_id=chat_id,
-        photo=BOT_LOGO_URL,
+        photo=LOGO_URL,
         caption=caption_text,
         reply_markup=reply_markup,
         parse_mode=ParseMode.MARKDOWN_V2  # Pastikan menggunakan mode yang tepat
