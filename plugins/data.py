@@ -29,13 +29,20 @@ class DataProduk:
     ]
 
     pricelist_userbot = [
-        "Paket Userbot 1: Rp50.000/bulan",
-        "Paket Userbot 2: Rp75.000/bulan",
-        "Paket Userbot 3: Rp100.000/bulan"
+        "*Jasa Deploy Userbot*\n",
+        "❏ *NyxianUserbot*",
+        "├• *UbotPrem*: Rp20.000/bulan",
+        "├• *Private Userbot*: Rp150.000/bulan",
+        "└• *Notes NyxianUserbot*: ",
+        "- Jika kalian order Private Userbot, kalian akan mendapatkan bot seperti NyxianUserbot, bisa membuat sampai 15 akun userbot."
     ]
 
     pricelist_bot_fsub = [
-        "Paket Bot Fsub 1: Rp150.000/bulan",
-        "Paket Bot Fsub 2: Rp250.000/bulan",
-        "Paket Bot Fsub 3: Rp350.000/bulan"
+        "*JASA DEPLOY BOT FSUB/ASUPAN*\n",
+        "❏ *FsubPremiumbot*",
+        "├ *Premium*: Rp25.000/bulan (2 button)",
+        "└• *Notes*: ",
+        "- Untuk FsubPremiumbot, bisa tambah button dengan harga Rp10.000/button",
+        "- Apabila bot Anda ter-banned, Anda bisa membuat bot lagi secara gratis sesuai dengan sisa masa aktif bot Anda.\n",
+        f"Order? Chat [Katsu](https://t.me/{OWNER_USERNAME})"
     ]
