@@ -53,8 +53,7 @@ def show_main_menu(chat_id, message_id, context):
         message_id=message_id,
         caption="Pilih pricelist yang diinginkan:",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("VPS", callback_data="vps")],
-            [InlineKeyboardButton("Userbot", callback_data="userbot")],
+            [InlineKeyboardButton("VPS", callback_data="vps"), InlineKeyboardButton("Userbot", callback_data="userbot")],
             [InlineKeyboardButton("Bot Fsub", callback_data="bot_fsub")]
         ])
     )
